@@ -1,5 +1,7 @@
 // ============================================================
-//  DATI DEL SITO: modifica solo questo file per aggiornarlo
+//  DATI DI PARTENZA DEL SITO
+//  Testi, fase, ID canale ed eventi li manda il Raspberry (stato.json)
+//  dalla pagina di controllo: questo file serve solo come base.
 // ============================================================
 window.CAMPNYLA = {
   // ID del canale YouTube (Studio > Impostazioni > Canale > Impostazioni avanzate). Inizia con "UC".
