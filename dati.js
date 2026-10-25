@@ -7,6 +7,9 @@ window.CAMPNYLA = {
   canale: "",
   handle: "@Campnyla",
 
+  // data della foto fissa img/nido.jpg, mostrata quando la diretta non c'e'
+  foto_data: "2026-10-21",
+
   // giorno 1 = giorno della cattura della regina
   inizio: "2026-10-11",
 
