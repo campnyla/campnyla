@@ -242,7 +242,7 @@ const INFO = {
   led:{t:'LED IR 940 nm', f:'acquisto · 4 pz + 2× 150 Ω', d:[['Collegamento','due serie: Pin 2 → 150 Ω → LED post. sx → LED ant. dx → Pin 6; Pin 4 → 150 Ω → LED post. dx → LED ant. sx → Pin 9'],['Corrente','≈ 16 mA, calore trascurabile'],['Perché 940','le formiche non lo vedono, nessun bagliore rosso']]},
   pi:{t:'Raspberry Pi 3 B+', f:'già in tuo possesso', d:[['Sistema','Raspberry Pi OS Lite (Bookworm)'],['Servizio','timelapse.py, si avvia da solo all\'accensione'],['Posizione','in verticale dietro la cappa, componenti verso l\'esterno, USB in alto']]},
   ribbon:{t:'Flat cable 15 pin', f:'acquisto · 30 cm', d:[['Percorso','fessura nella parete → fessura del supporto → dietro la scheda → sopra il bordo → connettore CAMERA']]},
-  usb:{t:'Chiavetta USB', f:'acquisto · 128 GB', d:[['Mount','/mnt/formiche, ext4'],['Spazio','≈ 1,2 GB/giorno a 1 frame/min']]},
+  usb:{t:'Chiavetta USB', f:'acquisto · 128 GB', d:[['Porta','USB vicina all\'Ethernet: quella dal lato del connettore camera è sotto il flat'],['Mount','/mnt/formiche, ext4'],['Spazio','≈ 1,2 GB/giorno a 1 frame/min']]},
   water:{t:'Provetta d\'acqua', f:'Ø20 mm', d:[['Riempimento','2/3 acqua, cotone compatto a filo'],['Verso','lato cotone dentro l\'attacco'],['Nota','dentro il manicotto oscurante']]},
   qtube:{t:'Provetta attuale della regina', f:'trasloco', d:[['Come','togli il cotone dell\'imboccatura e infilala nell\'attacco'],['Poi','provetta alla luce, nido coperto: entra da sola in 1–3 giorni'],['Se ha deposto','non forzare']]},
   queen:{t:'Regina di Camponotus nylanderi', f:'catturata a ottobre 2026', d:[['Fondazione','claustrale: niente cibo fino alle prime operaie'],['Camera','8 mm di altezza: può girarsi e stare in piedi sulla covata'],['Inverno','diapausa fresca, la covata riparte in primavera']]},
@@ -453,10 +453,10 @@ const PI_Y = 78, PI_Z0 = 7.5;
   bx(7,12,6,10.5,-21,mat(0x1a1a1a));
   bx(5.5,22.5,5.5,2.5,-16.5,mat(0xe0dbcf));
   bx(5.5,22.5,5.5,-38,0,mat(0xe0dbcf));
-  // chiavetta USB
-  const u = addMesh(g, box(40,13,5), mat(0x34495e,{roughness:0.5}), INFO.usb, {clip:false}); u.position.set(36+8.75+20-2, PI_Y-19, top+8);
-  const uc = addMesh(g, box(12,12,4.5), metal, INFO.usb, {clip:false}); uc.position.set(36+8.75-2, PI_Y-19, top+8);
-  anchor(g, 70, PI_Y-19, top+12, 'Chiavetta 128 GB');
+  // chiavetta USB: nella coppia di porte vicina all'Ethernet, cosi' il flat scavalca il bordo senza toccarla
+  const u = addMesh(g, box(40,13,5), mat(0x34495e,{roughness:0.5}), INFO.usb, {clip:false}); u.position.set(36+8.75+20-2, PI_Y-1.5, top+8);
+  const uc = addMesh(g, box(12,12,4.5), metal, INFO.usb, {clip:false}); uc.position.set(36+8.75-2, PI_Y-1.5, top+8);
+  anchor(g, 70, PI_Y-1.5, top+12, 'Chiavetta 128 GB');
   anchor(g, -42, PI_Y+10, top+3, 'Raspberry Pi 3 B+');
   // in verticale sul fianco posteriore della cappa: USB in alto, componenti verso l'esterno
   // x_c = PI_EDGE_X + py, z_c = PI_Z0 + px, y_c = retro scheda + (z_l - z0)
