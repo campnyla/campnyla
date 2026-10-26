@@ -255,6 +255,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       $("monitor").insertBefore(f, $("poster").nextSibling);
     } else if (!live && old) { old.remove(); }
     $("offline").hidden = !!live;
+    // in diretta titolo, giorno e ora sono gia' dentro il video: niente doppia barra sopra
+    document.querySelector("#monitor .osd").style.display = live ? "none" : "";
     $("rec").textContent = live ? "LIVE" : "FOTO"; $("rec").classList.toggle("still", !live);
     $("osdday").textContent = live || !fd ? n : dayOf(new Date(fd + "T12:00:00"));
     clearInterval(clockTimer);
