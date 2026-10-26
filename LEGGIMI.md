@@ -2,7 +2,7 @@
 
 ## Cosa c'è nella cartella
 - `index.html`: la pagina. Non serve toccarla.
-- `dati.js`: **l'unico file da modificare**. Contiene l'ID del canale, il testo "Adesso", la fase della colonia e il diario.
+- `dati.js`: valori di partenza (ID del canale, data d'inizio). Il resto lo manda il Raspberry.
 - `modello-3d.html`: il modello 3D interattivo.
 - `img/`: logo, immagine del nido, anteprima del modello e immagine per le condivisioni.
 
@@ -14,12 +14,11 @@
 5. Dopo un paio di minuti il sito è online su `https://NOMEUTENTE.github.io/campnyla/`.
 
 ## Aggiornare il sito
-Apri `dati.js` direttamente su GitHub (icona della matita), modificalo e premi **Commit changes**. Il sito si aggiorna in circa un minuto.
-
-- **canale**: quando hai l'ID del canale (inizia con `UC`), mettilo tra le virgolette. Da quel momento la diretta compare nella pagina.
-- **adesso**: una o due frasi su cosa sta succedendo.
-- **fase**: `provetta`, `uova`, `larve`, `pupe` oppure `operaie`.
-- **diario**: aggiungi una riga come quelle già presenti (data nel formato AAAA-MM-GG). Il giorno N si calcola da solo.
+Non serve toccare GitHub: si fa tutto dalla pagina di controllo del Raspberry.
+- **Diario**: ogni evento pubblicato va sul sito, con la sua foto. La fase della colonia si aggiorna da sola
+  (Prime uova → Uova, Prime larve → Larve, Prime pupe → Pupe, Prima operaia → Prime operaie).
+- **Sistema › Collegamento al sito**: interruttore attivo/sospeso e ID del canale YouTube.
+Il Raspberry scrive `stato.json` e le foto degli eventi in `eventi/`.
 
 ## Privacy
 Nel sito non ci sono il tuo nome, il luogo o la tua mail. Il repository è pubblico: non caricarci `config.json` del Raspberry, chiavi o token.

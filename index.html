@@ -73,10 +73,6 @@ p{margin:0 0 14px}
 .under{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin-top:12px;font:500 13px var(--f-mono);color:var(--muted)}
 .under b{color:var(--fg);font-weight:500}
 
-.now{margin-top:26px;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:baseline;
-  border-left:3px solid var(--amber);padding:4px 0 4px 16px;max-width:68ch}
-.now .k{font:500 12px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
-.now p{margin:0}
 
 /* ----- fasi */
 .phases{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:f}
@@ -147,7 +143,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <a class="btn" id="ytlink" href="https://www.youtube.com/@Campnyla" target="_blank" rel="noopener">Canale YouTube</a></div>
     <div class="under"><span>Giorno <b class="dayn">-</b> dalla cattura</span><span>Luce <b>940 nm</b>, invisibile alle formiche</span><span>Immagine <b>in bianco e nero</b></span></div>
 
-    <div class="now"><span class="k">Adesso</span><p id="adesso">-</p></div>
   </section>
 
   <section id="colonia">
@@ -228,7 +223,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
   function render(C){
     document.querySelectorAll(".dayn").forEach(function(e){ e.textContent = n; });
-    $("adesso").textContent = C.adesso || "";
 
     // fasi
     var order = ["provetta","uova","larve","pupe","operaie"], cur = order.indexOf(C.fase || "provetta");
@@ -242,7 +236,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         + (e.testo ? '<p>' + esc(e.testo) + '</p>' : '')
         + (e.foto ? '<a class="shot" href="' + esc(e.foto) + '" target="_blank" rel="noopener"><img src="' + esc(e.foto) + '" alt="' + esc(e.titolo) + '" loading="lazy"></a>' : '')
         + '</div></li>';
-    }).join("");
+    }).join("") || '<li class="empty"><div></div><div><p>Il diario parte da qui: i primi eventi arrivano presto.</p></div></li>';
 
     // link al canale
     var url = C.canale ? "https://www.youtube.com/channel/" + C.canale : "https://www.youtube.com/" + (C.handle || "");
@@ -272,12 +266,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   }
 
   render(BASE);
-  // stato.json lo scrive il Raspberry: testi, fase, diretta accesa/spenta, eventi pubblicati
+  // stato.json lo scrive il Raspberry: fase (dal diario), diretta accesa/spenta, eventi del diario
   function load(){
     fetch("stato.json?t=" + Date.now(), {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(st){
       if (!st) return;
       var C = Object.assign({}, BASE);
-      ["adesso","fase","canale"].forEach(function(k){ if (st[k]) C[k] = st[k]; });
+      ["fase","canale"].forEach(function(k){ if (st[k]) C[k] = st[k]; });
       C.diretta = !!st.diretta;
       C.diario = (BASE.diario || []).concat((st.eventi || []).map(function(e){
         return {data: e.data, ora: e.ora, titolo: e.titolo, testo: e.testo, foto: e.foto}; }));
