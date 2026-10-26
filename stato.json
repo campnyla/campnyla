@@ -1,7 +1,17 @@
 {
- "aggiornato": "2026-10-26T22:30:30",
+ "aggiornato": "2026-10-26T22:31:49",
  "fase": "provetta",
  "canale": "UCOyQIUU6QFPvZoWoP6JofhA",
  "diretta": false,
- "eventi": []
+ "eventi": [
+  {
+   "id": "20261026223145946007",
+   "data": "2026-10-26",
+   "ora": "22:31",
+   "giorno": 16,
+   "titolo": "Trasloco nel nido",
+   "testo": "",
+   "foto": "eventi/20261026223145946007_77cb2828.jpg"
+  }
+ ]
 }
