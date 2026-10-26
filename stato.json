@@ -1,8 +1,8 @@
 {
- "aggiornato": "2026-10-26T22:31:49",
+ "aggiornato": "2026-10-26T22:34:41",
  "fase": "provetta",
  "canale": "UCOyQIUU6QFPvZoWoP6JofhA",
- "diretta": false,
+ "diretta": true,
  "eventi": [
   {
    "id": "20261026223145946007",
