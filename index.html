@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="Campnyla">
-<meta property="og:description" content="Diretta a infrarossi della fondazione di una colonia di Camponotus nylanderi.">
+<meta property="og:description" content="Timelapse a infrarossi della fondazione di una colonia di Camponotus nylanderi.">
 <meta property="og:image" content="img/anteprima.jpg">
 <title>Campnyla</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Diretta a infrarossi della fondazione di una colonia di Camponotus nylanderi, giorno per giorno.">
+<meta name="description" content="Timelapse a infrarossi della fondazione di una colonia di Camponotus nylanderi, giorno per giorno.">
 <link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -126,20 +126,20 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
 <header class="top"><div class="wrap">
   <a class="brand" href="#diretta"><img src="img/logo.png" alt=""><b>CAMPNYLA</b></a>
-  <nav aria-label="Sezioni"><a href="#diretta">Diretta</a><a href="#colonia">La colonia</a><a href="#nido">Il nido</a><a href="#diario">Diario</a><a href="#domande">Domande</a></nav>
+  <nav aria-label="Sezioni"><a href="#diretta">Video</a><a href="#colonia">La colonia</a><a href="#nido">Il nido</a><a href="#diario">Diario</a><a href="#domande">Domande</a></nav>
 </div></header>
 
 <main class="wrap">
   <section class="hero" id="diretta">
-    <p class="eyebrow">Camponotus nylanderi · diretta a infrarossi</p>
+    <p class="eyebrow">Camponotus nylanderi · timelapse a infrarossi</p>
     <h1>Una regina, da sola, <em>fonda una colonia</em>.</h1>
-    <p class="lead">Chiusa nella sua camera, senza mangiare, alleva le prime operaie con le sue riserve. Qui la segui giorno e notte, sotto una luce che lei non vede.</p>
+    <p class="lead">Chiusa nella sua camera, senza mangiare, alleva le prime operaie con le sue riserve. Qui la segui giorno dopo giorno, sotto una luce che lei non vede.</p>
 
     <div class="monitor" id="monitor">
       <img id="poster" src="img/nido.jpg" alt="La camera di fondazione vista dalla telecamera a infrarossi">
       <div class="osd" aria-hidden="true"><span><span class="rec still" id="rec">FOTO</span> · giorno <span id="osdday">-</span></span><span id="clock">--</span></div>
     </div>
-    <div class="offline" id="offline"><span id="offmsg">La diretta parte a breve. Intanto questa è la camera di fondazione, pronta ad accogliere la regina.</span>
+    <div class="offline" id="offline"><span id="offmsg">I video arrivano presto. Intanto questa è la camera di fondazione.</span>
       <a class="btn" id="ytlink" href="https://www.youtube.com/@Campnyla" target="_blank" rel="noopener">Canale YouTube</a></div>
     <div class="under"><span>Giorno <b class="dayn">-</b> dalla cattura</span><span>Luce <b>940 nm</b>, invisibile alle formiche</span><span>Immagine <b>in bianco e nero</b></span></div>
 
@@ -166,15 +166,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <h2>Stampato in 3D, ripreso al buio</h2>
     <div class="split">
       <div>
-        <p class="read">Il nido è progettato su misura per questa specie e stampato in 3D. Una telecamera senza filtro infrarosso guarda dall'alto attraverso il plexiglass, mentre quattro LED a 940 nm illuminano la camera con una luce che le formiche non percepiscono. Un Raspberry Pi scatta il timelapse e trasmette la diretta.</p>
+        <p class="read">Il nido è progettato su misura per questa specie e stampato in 3D. Una telecamera senza filtro infrarosso guarda dall'alto attraverso il plexiglass, mentre quattro LED a 940 nm illuminano la camera con una luce che le formiche non percepiscono. Un Raspberry Pi scatta una foto ogni minuto e registra ogni movimento: da lì nascono i video.</p>
         <table class="spec">
           <tr><th>Camera di fondazione</th><td><span class="num">46 × 18 × 8</span> mm</td></tr>
           <tr><th>Copertura</th><td>plexiglass colato da <span class="num">3</span> mm</td></tr>
           <tr><th>Acqua</th><td>provetta Ø <span class="num">20</span> mm con cotone, collegata al nido</td></tr>
           <tr><th>Telecamera</th><td>Raspberry Pi Camera v2 NoIR, a <span class="num">66</span> mm dal pavimento</td></tr>
           <tr><th>Luce</th><td><span class="num">4</span> LED infrarossi a <span class="num">940</span> nm</td></tr>
-          <tr><th>Timelapse</th><td>una foto ogni <span class="num">60</span> s, un video ogni notte</td></tr>
-          <tr><th>Diretta</th><td><span class="num">1280 × 720</span>, <span class="num">5</span> fotogrammi al secondo</td></tr>
+          <tr><th>Timelapse</th><td>una foto ogni <span class="num">60</span> s, clip automatiche quando qualcosa si muove</td></tr>
           <tr><th>Cervello</th><td>Raspberry Pi 3 B+</td></tr>
         </table>
       </div>
@@ -198,14 +197,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <details><summary>La luce non dà fastidio alle formiche?</summary><p>No. I LED emettono a 940 nm, nel vicino infrarosso: è una lunghezza d'onda che le formiche non percepiscono, e nemmeno noi. Per loro la camera resta buia, come una cavità sotto la corteccia.</p></details>
     <details><summary>Perché l'immagine è in bianco e nero?</summary><p>Sotto l'infrarosso non esistono colori: la telecamera vede solo quanta luce torna indietro. È lo stesso motivo per cui le telecamere di sorveglianza di notte sono in bianco e nero.</p></details>
     <details><summary>Perché la regina non mangia?</summary><p>Nella fondazione claustrale la regina usa le riserve accumulate prima del volo nuziale. Darle cibo non serve e aprire il nido la disturberebbe. Il cibo arriverà con le prime operaie, in un'arena collegata al nido.</p></details>
-    <details><summary>La diretta è sempre accesa?</summary><p>Sì, giorno e notte. Ogni 11 ore la trasmissione si chiude e riparte, così ogni blocco resta salvato sul canale. Ogni notte viene montato anche un timelapse della giornata.</p></details>
+    <details><summary>Perché timelapse e non una diretta?</summary><p>Perché la fondazione è lenta: per ore la regina resta quasi immobile. Un timelapse riassume una giornata in un minuto e fa vedere quello che in diretta sfuggirebbe. Sul canale trovi il timelapse di ogni giorno e i montaggi dei momenti in cui qualcosa si muove.</p></details>
     <details><summary>Quanto ci vorrà per vedere le prime operaie?</summary><p>Con il caldo servono alcune settimane, dall'uovo all'operaia. Con l'inverno di mezzo la colonia rallenta molto: è probabile che le prime operaie arrivino in primavera.</p></details>
   </section>
 </main>
 
 <footer><div class="wrap">
   <span>Campnyla · progetto amatoriale di osservazione.</span>
-  <span>La diretta usa la modalità di YouTube a privacy avanzata: nessun cookie finché non premi play.</span>
+  <span>I video usano la modalità di YouTube a privacy avanzata: nessun cookie finché non premi play.</span>
 </div></footer>
 
 <script src="dati.js"></script>
@@ -218,8 +217,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   function dayOf(d){ return Math.floor((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - start) / 864e5) + 1; }
   function fmt(iso){ var p = iso.split("-"); return p[2] + "." + p[1] + "." + p[0]; }
   var preview = /claude\.(ai|site)|claudeusercontent|anthropic/.test(location.hostname) || location.protocol === "file:";
-  var n = dayOf(new Date()), clockTimer = null;
-  function tick(){ var d = new Date(); $("clock").textContent = d.toLocaleDateString("it-IT") + "  " + d.toTimeString().slice(0,5); }
+  var n = dayOf(new Date());
 
   function render(C){
     document.querySelectorAll(".dayn").forEach(function(e){ e.textContent = n; });
@@ -240,41 +238,39 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 
     // link al canale
     var url = C.canale ? "https://www.youtube.com/channel/" + C.canale : "https://www.youtube.com/" + (C.handle || "");
-    $("ytlink").href = url + (C.canale ? "/live" : ""); $("ytlink2").href = url;
+    $("ytlink").href = url + (C.canale ? "/videos" : ""); $("ytlink2").href = url;
 
-    // immagine fuori diretta: la foto dell'ultimo evento pubblicato, altrimenti quella fissa del nido
+    // in cima: l'ultimo video caricato sul canale (playlist dei caricamenti: UC... -> UU...),
+    // finche' non ce ne sono resta la foto dell'ultimo evento del diario o quella fissa del nido
     var last = ev.filter(function(e){ return e.foto; })[0];
     var fd = last ? last.data : (C.foto_data || "");
     $("poster").src = last ? last.foto : "img/nido.jpg";
     var old = $("monitor").querySelector("iframe");
-    var live = C.canale && C.diretta && !preview;
-    if (live && !old) {
+    var vid = C.canale && C.canale.indexOf("UC") === 0 && C.video && !preview;
+    if (vid && !old) {
       var f = document.createElement("iframe");
-      f.src = "https://www.youtube-nocookie.com/embed/live_stream?channel=" + encodeURIComponent(C.canale) + "&mute=1&autoplay=1&playsinline=1";
-      f.title = "Diretta del nido"; f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true;
+      f.src = "https://www.youtube-nocookie.com/embed/videoseries?list=UU" + encodeURIComponent(C.canale.slice(2)) + "&playsinline=1&rel=0";
+      f.title = "Ultimo video della colonia"; f.allow = "encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true;
+      f.loading = "lazy";
       $("monitor").insertBefore(f, $("poster").nextSibling);
-    } else if (!live && old) { old.remove(); }
-    $("offline").hidden = !!live;
-    // in diretta titolo, giorno e ora sono gia' dentro il video: niente doppia barra sopra
-    document.querySelector("#monitor .osd").style.display = live ? "none" : "";
-    $("rec").textContent = live ? "LIVE" : "FOTO"; $("rec").classList.toggle("still", !live);
-    $("osdday").textContent = live || !fd ? n : dayOf(new Date(fd + "T12:00:00"));
-    clearInterval(clockTimer);
-    if (live) { tick(); clockTimer = setInterval(tick, 20000); }
-    else { $("clock").textContent = fd ? "foto del " + fmt(fd) : ""; }
-    $("offmsg").textContent = preview ? "Anteprima: sul sito pubblicato qui c'è la diretta di YouTube."
-      : C.canale ? "La diretta è in pausa. Intanto trovi i timelapse sul canale."
-      : "La diretta parte a breve. Intanto questa è la camera di fondazione, pronta ad accogliere la regina.";
+    } else if (!vid && old) { old.remove(); }
+    document.querySelector("#monitor .osd").style.display = vid ? "none" : "";
+    $("osdday").textContent = !fd ? n : dayOf(new Date(fd + "T12:00:00"));
+    $("clock").textContent = fd ? "foto del " + fmt(fd) : "";
+    $("offmsg").textContent = vid ? "L'ultimo video della colonia. Tutti gli altri sono sul canale."
+      : preview ? "Anteprima: sul sito pubblicato qui c'è l'ultimo video del canale."
+      : "I video arrivano presto. Intanto questa è la camera di fondazione.";
+    $("ytlink").textContent = "Tutti i video";
   }
 
   render(BASE);
-  // stato.json lo scrive il Raspberry: fase (dal diario), diretta accesa/spenta, eventi del diario
+  // stato.json lo scrive il Raspberry: fase (dal diario), se mostrare l'ultimo video, eventi del diario
   function load(){
     fetch("stato.json?t=" + Date.now(), {cache: "no-store"}).then(function(r){ return r.ok ? r.json() : null; }).then(function(st){
       if (!st) return;
       var C = Object.assign({}, BASE);
       ["fase","canale"].forEach(function(k){ if (st[k]) C[k] = st[k]; });
-      C.diretta = !!st.diretta;
+      C.video = !!st.video;
       C.diario = (BASE.diario || []).concat((st.eventi || []).map(function(e){
         return {data: e.data, ora: e.ora, titolo: e.titolo, testo: e.testo, foto: e.foto}; }));
       render(C);
